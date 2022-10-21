@@ -103,12 +103,8 @@ img {
 
 .connection-item-icon {
   margin-right: 10px;
-  fill: var(--paragraf-color);
 }
-.connection-item-icon:hover,
-.connection-item-icon:focus {
-  fill: var(--accent-color);
-}
+
 .connection .item:last-child {
   margin-right: 0;
 }
@@ -116,6 +112,7 @@ img {
   display: flex;
   align-items: center;
   color: var(--paragraf-color);
+  fill: var(--paragraf-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -125,8 +122,11 @@ img {
 .site-nav .link:hover,
 .site-nav .link:focus,
 .connection .link:hover,
-.connection .link:focus {
+.connection .link:focus,
+.connection-item-icon:hover,
+.connection-item-icon:focus {
   color: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 .site-nav .this-page {
@@ -147,6 +147,7 @@ img {
 /*Стилизирую Героя*/
 .hero {
   padding: 200px 0;
+  margin: 0 auto;
   max-width: 1600px;
   background-color: var(--accent-bg-color);
   background-image: linear-gradient(rgba(47, 48, 58, 0.4) 0 100%),
@@ -172,6 +173,7 @@ img {
   border: none;
   margin-right: auto;
   margin-left: auto;
+  padding: 10px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 
@@ -206,6 +208,7 @@ img {
 .benefits-container {
   padding: 25px 100px;
   margin-bottom: 30px;
+  background-color: var(--team-section-bg-color);
 }
 
 .benefits .item:last-child {
@@ -309,17 +312,20 @@ img {
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+
   fill: var(--svg-color);
 }
 .social-links .link {
   display: flex;
   text-align: center;
+  border-radius: 50%;
   fill: var(--svg-color);
+  width: 100%;
+  height: 100%;
 }
-.social-links .item:hover,
-.social-links .item:focus {
-  fill: var(--hero-color);
+.social-links .link:hover,
+.social-links .link:focus {
+  fill: white;
   background-color: var(--accent-color);
 }
 /*Секция клиентов*/
@@ -328,7 +334,11 @@ img {
 }
 
 .clients .title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
   text-align: center;
+  letter-spacing: 0.03em;
   margin-bottom: 50px;
 }
 .clients-list {
@@ -337,7 +347,7 @@ img {
   gap: 30px;
 }
 
-.clients-list > .item {
+.clients-list .link {
   display: flex;
   align-items: center;
   width: 170px;
@@ -352,8 +362,8 @@ img {
   margin: auto;
 }
 
-.clients-list > .item:hover,
-.clients-list > .item:focus {
+.clients-list .link:hover,
+.clients-list .link:focus {
   fill: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
@@ -362,15 +372,13 @@ img {
   padding: 60px 0;
   background-color: var(--accent-bg-color);
 }
-
-.footer-list {
+.footer > .container {
   display: flex;
+  align-items: baseline;
 }
-.footer-list > .item {
+
+.footer-adres-container {
   margin-right: 70px;
-}
-.footer-list > .item:last-child {
-  margin-right: 0;
 }
 .footer-logo {
   margin-right: 0;
@@ -400,7 +408,7 @@ img {
 .footer-adres .link:focus {
   color: var(--accent-color);
 }
-.footer .title {
+.footer .text {
   color: var(--hero-color);
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -413,8 +421,9 @@ img {
   justify-content: center;
   gap: 10px;
 }
-.footer-social-links .item {
+.footer-social-links .link {
   display: flex;
+  text-align: center;
   justify-content: center;
   width: 44px;
   height: 44px;
@@ -422,17 +431,13 @@ img {
   background-color: rgba(255, 255, 255, 0.1);
   fill: var(--hero-color);
 }
-.footer-social-links .link {
-  display: flex;
-  text-align: center;
-  fill: var(--hero-color);
-}
+
 .footer-social-links .icon {
   align-items: center;
   margin: auto;
 }
-.footer-social-links .item:hover,
-.footer-social-links .item:focus {
+.footer-social-links .link:hover,
+.footer-social-links .link:focus {
   background-color: var(--accent-color);
 }
 
@@ -460,8 +465,6 @@ img {
 
 .portfolio-btn {
   padding: 6px 22px;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
   border: none;
   border-radius: 4px;
   font-family: var(--main-text), sans-serif;
@@ -478,6 +481,8 @@ img {
 .portfolio-btn:hover {
   color: var(--hero-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio .box {
@@ -506,6 +511,7 @@ img {
   font-size: 18px;
   line-height: 36px;
   letter-spacing: 0.06em;
+  color: var(--main-color);
 }
 
 .portfolio-text {
@@ -513,4 +519,10 @@ img {
   line-height: 30px;
   letter-spacing: 0.03em;
   color: var(--paragraf-color);
+}
+
+.portfolio .link:hover,
+.portfolio .link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
